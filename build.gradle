@@ -1,0 +1,20 @@
+group 'jsonprojects'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+
+mainClassName = 'com.kmartin.Main'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.apache.httpcomponents:httpclient:4.5.2'
+    compile 'com.google.code.gson:gson:2.6.1'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
