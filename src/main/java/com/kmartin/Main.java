@@ -8,9 +8,9 @@ package com.kmartin;
         import java.util.List;
 
 class TaskCollection implements Iterable<Task>{
-    private List<Task> todos = new ArrayList<>();
+    private List<Task> todos = new ArrayList();
 
-    @Override
+
     public Iterator<Task> iterator() {
         return todos.iterator();
     }
@@ -73,7 +73,7 @@ class Task {
 }
 
 class TaskDeserializer implements JsonDeserializer<Task> {
-    @Override
+
     public Task deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
         JsonObject jsonObject = json.getAsJsonObject();
         return new Task(
@@ -87,7 +87,7 @@ class TaskDeserializer implements JsonDeserializer<Task> {
 }
 
 class TaskSerializer implements JsonSerializer<Task> {
-    @Override
+
     public JsonElement serialize(Task src, Type typeOfSrc, JsonSerializationContext context) {
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("title", src.getName());
